@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration.Json;
 using Azure;
 
 // Add Azure OpenAI package
-
+using Azure.AI.OpenAI;
   
 // Get configuration settings  
 IConfiguration config = new ConfigurationBuilder()
@@ -20,7 +20,6 @@ string azureSearchIndex = config["AzureSearchIndex"] ?? "";
 
 // Initialize the Azure OpenAI client
 OpenAIClient client = new OpenAIClient(new Uri(oaiEndpoint), new AzureKeyCredential(oaiKey));
-
 
 // Get the prompt text
 Console.WriteLine("Enter a question:");
